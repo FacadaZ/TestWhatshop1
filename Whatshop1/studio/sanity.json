@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "vt85eo8h",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "whatshop-web"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "dashboard-widget-netlify",
+    "@sanity/dashboard"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["@sanity/vision"]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "src/dashboardConfig.js"
+    }
+  ]
+}

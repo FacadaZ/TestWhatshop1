@@ -1,0 +1,117 @@
+.salePage {
+  .viewPort();
+  .container {
+    .viewPort();
+
+    .bg {
+      animation: slide 3s ease-in-out 10 alternate;
+      background-image: linear-gradient(-60deg, @gray 50%, @turquesa 50%);
+      bottom: 0;
+      left: -50%;
+      opacity: 0.5;
+      position: fixed;
+      right: -50%;
+      top: 0;
+      //   z-index: -1;
+      @keyframes slide {
+        0% {
+          transform: translateX(-25%);
+        }
+        100% {
+          transform: translateX(25%);
+        }
+      }
+    }
+
+    .bg2 {
+      animation-direction: alternate-reverse;
+      animation-duration: 4s;
+    }
+
+    .bg3 {
+      animation-duration: 5s;
+    }
+
+    .content {
+      .flat();
+      flex-direction: column;
+      padding: @size-4;
+      border-radius: @radius;
+      box-sizing: border-box;
+      left: 50%;
+      position: fixed;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        opacity: 1;
+      }
+      text-transform: initial;
+      .videoPlayer {
+        width: -webkit-fill-available !important;
+        height: 100% !important;
+      }
+      .wrapper {
+        position: relative;
+        cursor: pointer;
+        width: 450px;
+        // height: 450px;
+        @media (max-width: @mobile) {
+          width: 300px;
+          // height: 300px;
+        }
+        .playButton {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          .icon {
+            fill: @turquesa;
+            width: 50px;
+            height: 50px;
+          }
+        }
+      }
+      .actions {
+        .flex();
+        .enter();
+        justify-content: space-between;
+        width: 100%;
+        height: 10%;
+      }
+      .accept {
+        // .flat();
+        // padding: @size-2;
+        .buttons {
+          .flex();
+          flex-direction: column;
+          justify-content: space-between;
+          .btn {
+            width: 100%;
+            margin: 8px 0;
+          }
+        }
+        .countdownContainer {
+          // .pressed();
+          padding: 4px 0;
+          .countdown {
+            font-weight: bold;
+            font-size: 1.7em;
+          }
+        }
+      }
+      .noStartSale {
+        min-width: 300px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        .emoji {
+          font-size: 3em;
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}
